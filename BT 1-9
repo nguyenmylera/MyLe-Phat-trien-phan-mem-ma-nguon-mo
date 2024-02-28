@@ -1,0 +1,95 @@
+                         BT PHP
+--Câu 1
+<?php
+$n = readline("Nhập vào số nguyên n: ");
+$absoluteValue = abs($n);
+echo "Giá trị tuyệt đối của $n là: $absoluteValue";
+?>
+--Câu 2
+<?php
+$a = readline("Nhập số nguyên dương a: ");
+$b = readline("Nhập số nguyên dương b: ");
+if ($b != 0) {
+    // Tính kết quả chia lấy phần dư
+    $remainder = $a % $b;
+    echo "Kết quả chia lấy phần dư của $a cho $b là: $remainder";
+} else {
+    echo "Không thể thực hiện phép chia với số bằng 0.";
+}?>
+--Câu 3
+<?php
+$fahrenheit = readline("Nhập nhiệt độ Fahrenheit: ");
+$celsius = (5/9) * ($fahrenheit - 32);
+echo "Nhiệt độ tương đương Celsius là: $celsius";
+?>
+--Câu 4
+<?php
+$a = readline("Nhập hệ số a: ");
+$b = readline("Nhập hệ số b: ");
+if ($a != 0) {
+    // Tính giá trị của x
+    $x = -$b / $a;
+    echo "Nghiệm của phương trình $a*x + $b = 0 là x = $x";
+} else {
+    if ($b == 0) {
+        echo "Phương trình vô số nghiệm.";
+    } else {
+        echo "Phương trình vô nghiệm.";
+    }
+}?>
+--Câu 5
+<?php
+$a = readline("Nhập số nguyên a: ");
+$b = readline("Nhập số nguyên b: ");
+$c = readline("Nhập số nguyên c: ");
+$maxValue = max($a, $b, $c);
+echo "Giá trị lớn nhất là: $maxValue";
+?>
+--Câu 6
+<?php
+do {
+    $number = readline("Nhập một số nguyên dương có 2 chữ số: ");
+} while ($number < 10 || $number > 99); // Kiểm tra số có 2 chữ số
+$digit1 = floor($number / 10); // Chữ số hàng chục
+$digit2 = $number % 10;        // Chữ số hàng đơn vị
+$sum = $digit1 + $digit2;
+echo "Tổng các chữ số của $number là: $sum";
+?>
+--Câu 7
+<?php
+$seconds = readline("Nhập thời gian tính bằng giây: ");
+$hours = floor($seconds / 3600);
+$minutes = floor(($seconds % 3600) / 60);
+$remainingSeconds = $seconds % 60;
+echo "Thời gian là: $hours giờ, $minutes phút, $remainingSeconds giây";
+?>
+--Câu 8
+<?php
+$N = readline("Nhập vào số nguyên dương N: ");
+echo "$N ";
+while ($N != 1) {
+    if ($N % 2 == 0) {
+        // Nếu N là số chẵn, chia cho 2
+        $N = $N / 2;
+    } else {
+        // Nếu N là số lẻ, nhân cho 3 và cộng thêm 1
+        $N = $N * 3 + 1;
+    }
+    
+    echo "$N ";
+}
+?>
+--Câu 9
+<?php
+$N = readline("Nhập số nguyên N: ");
+$inputNumbers = readline("Nhập " . ($N-1) . " số khác biệt và nằm giữa 1 và $N, cách nhau bởi khoảng trắng: ");
+$numbers = explode(" ", $inputNumbers);
+$totalSum = ($N * ($N + 1)) / 2;
+$givenSum = array_sum($numbers);
+$missingNumber = $totalSum - $givenSum;
+echo "Số còn thiếu là: $missingNumber";
+?>
+
+
+
+
